@@ -144,10 +144,14 @@ _G.Guard = Value
 Script:AddButton({
 	Name = "Guardian Angel Ability",
 	Callback = function()
+fireclickdetector(workspace.Lobby["Guardian Angel"].ClickDetector)
+wait(0.1)
 local args = {
     [1] = game:GetService("Players")._G.Guard
 }
 game:GetService("ReplicatedStorage").GeneralAbility:FireServer(unpack(args))
+wait(0.1)
+fireclickdetector(workspace.Lobby["Default"].ClickDetector)
 	 end
 })
 
