@@ -1,4 +1,4 @@
-local GameName = "trooll - by nexer"
+local GameName = "trooll ezz - by nexer"
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({IntroText = "trolling people xd lool ez haha eee", IntroIcon = "rbxassetid://15315284749",Name = GameName, HidePremium = false, SaveConfig = true, ConfigFolder = "Tutorial"})
@@ -137,7 +137,7 @@ Script:AddTextbox({
     Default = "Input",
     TextDisappear = false,
     Callback = function(Value)
-Guard = Value
+_G.Guard = Value
     end
 })
 
@@ -147,7 +147,7 @@ Script:AddButton({
 fireclickdetector(workspace.Lobby["Guardian Angel"].ClickDetector)
 wait(0.1)
 local args = {
-    [1] = game:GetService("Players").Guard
+    [1] = game:GetService("Players")[_G.Guard]
 }
 game:GetService("ReplicatedStorage").GeneralAbility:FireServer(unpack(args))
 wait(0.1)
