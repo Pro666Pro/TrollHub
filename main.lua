@@ -114,7 +114,7 @@ Script:AddButton({
 	Name = "Rattlebones Ability",
 	Callback = function()
        fireclickdetector(workspace.Lobby["Rattlebones"].ClickDetector)
-       wait(0.1)
+       wait(0.3)
 			 game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
        wait(0.1)
        fireclickdetector(workspace.Lobby["Default"].ClickDetector)
@@ -122,13 +122,32 @@ Script:AddButton({
 })
 
 Script:AddButton({
-	Name = "Rattlebones Ability",
+	Name = "Cloud Ability",
 	Callback = function()
        fireclickdetector(workspace.Lobby["Cloud"].ClickDetector)
        wait(0.1)
 			 game:GetService("ReplicatedStorage").CloudAbility:FireServer()
        wait(0.1)
        fireclickdetector(workspace.Lobby["Default"].ClickDetector)
+	 end
+})
+
+Script:AddTextbox({
+    Name = "Username to give guardian angel",
+    Default = "Input",
+    TextDisappear = false,
+    Callback = function(Value)
+_G.Guard = Value
+    end
+})
+
+Script:AddButton({
+	Name = "Guardian Angel Ability",
+	Callback = function()
+local args = {
+    [1] = game:GetService("Players")._G.Guard
+}
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer(unpack(args))
 	 end
 })
 
